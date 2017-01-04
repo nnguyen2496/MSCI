@@ -1,5 +1,4 @@
-
-#download CSV to user's desktop
+#download MSCI USA CSV to user's desktop
 source_link <- "https://www.ishares.com/us/products/239693/ishares-msci-usa-etf/1467271812596.ajax?fileType=csv&fileName=EUSA_holdings&dataType=fund"
 url <- getwd()
 path <- paste(url, "temp2.csv", sep = "/")
