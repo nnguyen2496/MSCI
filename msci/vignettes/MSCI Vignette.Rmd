@@ -1,0 +1,30 @@
+---
+title: "Vignette Title"
+author: "Nam Nguyen & John Gilheany"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+MSCI is a package that allows you to download and view the data of MSCI USA and MSCI Min Volatility. 
+
+List of functions:
+
+getPath_min_vol(): build and return the path to the downloaded csv file of MSCI Min Vol data as an array of characters (the downloaded file is stored in the working directory of the user). This function is not exported and only serves as a helper function.
+
+getPath_usa(): build and return the path to the downloaded csv file of MSCI USA data as an array of characters (the downloaded file is stored in the working directory of the user). This function is not exported and only serves as a helper function.
+
+download_file_min_vol(): download the MSCI Min Volatility data from https://www.ishares.com/us/products/239695/ishares-msci-usa-minimum-volatility-etf/ in csv format.
+
+download_file_usa(): download the MSCI USA data from https://www.ishares.com/us/products/239693/ishares-msci-usa-etf/ in csv format.
+
+printTable_min_vol(): prints out all MSCI Min Volatility indixes and their constituents in a table format.
+
+printTable_usa(): prints out all MSCI USA indixes and their constituents in a table format.
+
+printDate_min_vol(): prints out the updated date of the data in MSCI Min Vol table.
+
+printDate_usa(): prints out the updated date of the data in MSCI USA table.
