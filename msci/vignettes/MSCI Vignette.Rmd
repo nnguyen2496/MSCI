@@ -1,6 +1,6 @@
 ---
 title: "Vignette Title"
-author: "Vignette Author"
+author: "Nam Nguyen & John Gilheany"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -9,50 +9,22 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+MSCI is a package that allows you to download and view the data of MSCI USA and MSCI Min Volatility. 
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+List of functions:
 
-## Vignette Info
+getPath_min_vol(): build and return the path to the downloaded csv file of MSCI Min Vol data as an array of characters (the downloaded file is stored in the working directory of the user). This function is not exported and only serves as a helper function.
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+getPath_usa(): build and return the path to the downloaded csv file of MSCI USA data as an array of characters (the downloaded file is stored in the working directory of the user). This function is not exported and only serves as a helper function.
 
-## Styles
+download_file_min_vol(): download the MSCI Min Volatility data from https://www.ishares.com/us/products/239695/ishares-msci-usa-minimum-volatility-etf/ in csv format.
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+download_file_usa(): download the MSCI USA data from https://www.ishares.com/us/products/239693/ishares-msci-usa-etf/ in csv format.
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
+printTable_min_vol(): prints out all MSCI Min Volatility indixes and their constituents in a table format.
 
-## Figures
+printTable_usa(): prints out all MSCI USA indixes and their constituents in a table format.
 
-The figure sizes have been customised so that you can easily put two images side-by-side. 
+printDate_min_vol(): prints out the updated date of the data in MSCI Min Vol table.
 
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
-```
-
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+printDate_usa(): prints out the updated date of the data in MSCI USA table.
